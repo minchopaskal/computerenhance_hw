@@ -1,0 +1,179 @@
+special
+add Imm_RegMem_SE
+or Imm_RegMem
+adc Imm_RegMem_SE
+sbb Imm_RegMem_SE
+and Imm_RegMem
+sub Imm_RegMem_SE
+xor Imm_RegMem
+cmp Imm_RegMem_SE
+
+add Imm_RegMem_SE
+- Unknown
+adc Imm_RegMem_SE
+sbb Imm_RegMem_SE
+- Unknown
+sub Imm_RegMem_SE
+- Unknown
+cmp Imm_RegMem_SE
+
+rol RegMem_1
+ror RegMem_1
+rcl RegMem_1
+rcr RegMem_1
+sal RegMem_1
+shr RegMem_1
+- Unknown
+sar RegMem_1
+
+rol RegMem_CL
+ror RegMem_CL
+rcl RegMem_CL
+rcr RegMem_CL
+sal RegMem_CL
+shr RegMem_CL
+- Unknown
+sar RegMem_CL
+
+test Imm_RegMem
+- Unknown
+not RegMem
+neg RegMem
+mul RegMem
+imul RegMem
+div RegMem
+idiv RegMem
+
+inc RegMem
+dec RegMem
+- Unknown
+- Unknown
+- Unknown
+- Unknown
+- Unknown
+- Unknown
+
+inc RegMem
+dec RegMem
+call RegMem
+call RegMem_Far
+jmp RegMem
+jmp RegMem_Far
+push RegMem
+- Unknown
+
+normal
+- 1000000 Special 0
+- 1000001 Special 1
+- 1101000 Special 2
+- 1101001 Special 3
+- 1111011 Special 4
+- 11111110 Special 5
+- 11111111 Special 6
+mov 100010 RegMem_Reg
+mov 1100011 Imm_RegMem
+mov 1011 Imm_Reg
+mov 1010000 Mem_Acc
+mov 1010001 Acc_Mem
+mov 10001100 SR_RegMem
+mov 10001110 SR_RegMem
+push 01010 Reg
+push 000--110 SR
+pop 10001111 RegMem
+pop 01011 Reg
+pop 000--111 SR
+xchg 1000011 RegMem_Reg
+xchg 10010 Reg_Acc
+in 1110010 FixedPort
+in 1110110 VariablePort
+out 1110011 FixedPort
+out 1110111 VariablePort
+xlat 11010111
+lea 10001101 Mem_Reg
+lds 11000101 Mem_Reg
+les 11000100 Mem_Reg
+lahf 10011111 SingleByte
+sahf 10011110 SingleByte
+pushf 10011100 SingleByte
+popf 10011101 SingleByte
+add 000000 RegMem_Reg
+add 0000010 Imm_Acc
+adc 000100 RegMem_Reg
+adc 0001010 Imm_Acc
+inc 01000 Reg
+aaa 00110111
+daa 00100111
+sub 001010 RegMem_Reg
+sub 0010110 Imm_Acc
+sbb 000110 RegMem_Reg
+sbb 0001110 Imm_Acc
+dec 01001 Reg
+cmp 001110 RegMem_Reg
+cmp 0011110 Imm_Acc
+aas 00111111
+das 00101111
+aam 11010100 SkipSecond
+aad 11010101 SkipSecond
+cbw 10011000
+cwd 10011001
+and 001000 RegMem_Reg
+and 0010010 Imm_Acc
+test 1000010 RegMem_Reg
+test 1010100 Imm_Acc
+or 000010 RegMem_Reg
+or 0000110 Imm_Acc
+xor 001100 RegMem_Reg
+xor 0011010 Imm_Acc
+repne 11110010
+rep 11110011
+movs 1010010 StringManip
+cmps 1010011 StringManip
+scas 1010111 StringManip
+lods 1010110 StringManip
+stos 1010101 StringManip
+call 11101000 NearProc
+call 10011010 FarProc
+jmp 11101001 NearProc
+jmp 11101011 Jmp
+jmp 11101010 FarProc
+ret 11000011
+ret 11000010 Imm16
+retf 11001011
+retf 11001010 Imm16
+je 01110100 Jmp
+jl 01111100 Jmp
+jle 01111110 Jmp
+jb 01110010 Jmp
+jbe 01110110 Jmp
+jp 01111010 Jmp
+jo 01110000 Jmp
+js 01111000 Jmp
+jne 01110101 Jmp
+jnl 01111101 Jmp
+jnle 01111111 Jmp
+jnb 01110011 Jmp
+jnbe 01110111 Jmp
+jnp 01111011 Jmp
+jno 01110001 Jmp
+jns 01111001 Jmp
+loop 11100010 Jmp
+loopz 11100001 Jmp
+loopnz 11100000 Jmp
+jcxz 11100011 Jmp
+int 11001101 Imm8
+int3 11001100
+into 11001110
+iret 11001111
+clc 11111000
+cmc 11110101
+stc 11111001
+cld 11111100
+std 11111101
+cli 11111010
+sti 11111011
+hlt 11110100
+wait 10011011
+esc 11011 Esc
+lock 11110000
+- 001--110 SegmentPrefix
+
